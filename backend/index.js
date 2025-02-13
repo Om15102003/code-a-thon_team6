@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-
+import { exec } from 'child_process';
 
 dotenv.config();
 
@@ -31,12 +31,35 @@ db.connect();
 // ... existing code ...
 
 // Execute Impact Analysis
+// app.post("/execute-impact-analysis", async (req, res) => {
+//     try {
+//         // Execute the Python script using child_process
+//         const { exec } = require('child_process');
+        
+//         exec('py impact_analysis_pg.py', (error, stdout, stderr) => {
+//             if (error) {
+//                 console.error(`Error executing Python script: ${error}`);
+//                 return res.status(500).json({ error: "Failed to execute impact analysis" });
+//             }
+            
+//             if (stderr) {
+//                 console.error(`Python script stderr: ${stderr}`);
+//             }
+            
+//             res.json({ 
+//                 message: "Impact analysis completed successfully",
+//                 output: stdout
+//             });
+//         });
+//     } catch (error) {
+//         console.error("Error running impact analysis:", error);
+//         res.status(500).json({ error: "Internal server error" });
+//     }
+// });
+
 app.post("/execute-impact-analysis", async (req, res) => {
     try {
-        // Execute the Python script using child_process
-        const { exec } = require('child_process');
-        
-        exec('python3 impact_analysis_pg.py', (error, stdout, stderr) => {
+        exec('python impact_analysis_pg.py', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error executing Python script: ${error}`);
                 return res.status(500).json({ error: "Failed to execute impact analysis" });

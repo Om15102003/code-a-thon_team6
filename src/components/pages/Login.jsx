@@ -47,8 +47,8 @@ const LoginPage = ({ onNavigateToRegister }) => {
   return (
     <div className="container">
       <div className="card">
-        <h1 className="title">Ground Crew Scheduler</h1>
-        <p className="subtitle">AI-Powered Airport Operations Management</p>
+        <h1 className="title">Code-a-Company</h1>
+        <p className="subtitle">Standout company for young coding minds</p>
 
         {error && <div className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>{error}</div>}
 

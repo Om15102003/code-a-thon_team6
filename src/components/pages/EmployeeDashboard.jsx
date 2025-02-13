@@ -169,7 +169,7 @@ const Dashboard = () => {
           {employeeInfo && (
             <>
               <div>
-                <p className="text-info">Position: {employeeInfo.role}</p>
+                <p className="text-info">Position: Developer</p>
                 <p className="text-info">Department: {employeeInfo.department_name}</p>
                 <p className="text-info">Employee ID: {employeeInfo.id}</p>
               </div>
@@ -251,7 +251,7 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <div className="sidebar">
         <div className="sidebar-header">
-          <h1 className="sidebar-title">Airport Ops</h1>
+          <h1 className="sidebar-title">Code-a-Company</h1>
         </div>
         <nav className="sidebar-nav">
           {[
