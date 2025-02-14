@@ -150,5 +150,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Contact
 
-Your Name - Om Gupta
+My email - omg5628@gmail.com
 Project Link: https://github.com/Om15102003/code-a-company
