@@ -164,11 +164,12 @@ const RegistrationPage = ({ onNavigateToLogin }) => {
       localStorage.setItem('user', JSON.stringify(user));
       
       console.log(user);
+      alert("registration successful");
       
       if (user.role === 'employee') {
-        window.location.href = '/dashboard';
+        window.location.href = '/';
       } else {
-        window.location.href = `/${user.role}-dashboard`;
+        window.location.href = `/`;
       }
     } catch (err) {
       setError(err.response?.data?.error || err.message || 'Registration failed. Please try again.');
@@ -224,7 +225,7 @@ const RegistrationPage = ({ onNavigateToLogin }) => {
             required
           />
           <input
-            type="text"
+            type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}

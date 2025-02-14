@@ -1,71 +1,154 @@
-# Getting Started with Create React App
+# Code-a-Company Employee Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+Code-a-Company Employee Management System is a full-stack web application designed to streamline employee management, task tracking, and organizational operations. The system features role-based access control with separate dashboards for employees, managers, and CEOs.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Authentication & Authorization
+- Secure login system with role-based access (Employee, Manager, CEO)
+- JWT-based authentication
+- Protected routes based on user roles
 
-### `npm start`
+### Employee Dashboard
+- Personal information display
+- Task management with status tracking (Pending, In Progress, Completed)
+- Real-time task updates
+- Department information
+- Team member visibility
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Manager Dashboard
+- Department employee management
+- Task assignment and tracking
+- Bulk employee data upload via Excel
+- Employee performance monitoring
+- Department-wide task overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### CEO Dashboard
+- Company-wide oversight
+- Impact analysis reporting
+- Department performance metrics
+- Excel report generation
 
-### `npm test`
+## Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- React.js
+- React Router for navigation
+- Lucide React for icons
+- Axios for API calls
+- CSS for styling
 
-### `npm run build`
+### Backend
+- Node.js with Express
+- PostgreSQL database
+- Python for data analysis
+- JWT for authentication
+- bcrypt for password hashing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Additional Tools
+- XLSX for Excel file handling
+- pandas for data manipulation
+- psycopg2 for PostgreSQL connection in Python
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/Om15102003/code-a-company.git
+cd code-a-company
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install Frontend dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd src
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   Install Backend dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd ../backend
+npm install
+pip install -r requirements.txt
+``` 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Set up the database
+- Create a PostgreSQL database named `employee_system`
+- Update the database configuration in `backend/.env`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Configure environment variables
+Create a `.env` file in the backend directory with the following:
+PG_USER=your_postgres_user
+PG_HOST=localhost
+PG_DATABASE=employee_system
+PG_PASSWORD=your_postgres_password
+PG_PORT=5432
+JWT_SECRET=your_jwt_secret
 
-### Code Splitting
+5. Start the client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+Backend Server
+cd backend      
+npm start
 
-### Analyzing the Bundle Size
+Frontend Server
+cd ../src
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Database Schema
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application uses the following main tables:
+- employee
+- department
+- tasks
+- employee_task_assignments
+- roles
+- impactanalysis
 
-### Advanced Configuration
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Authentication
+- POST /login
+- POST /register
 
-### Deployment
+### Employee Routes
+- GET /employee/:id
+- GET /employee/:id/tasks
+- PUT /tasks/:id/status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Manager Routes
+- GET /manager/department-employees/:managerId
+- GET /manager/department-tasks/:managerId
+- POST /manager/upload-employees/:managerId
 
-### `npm run build` fails to minify
+### Analysis Routes
+- POST /execute-impact-analysis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# code-a-thon_team6" 
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+- Thanks to all contributors who have helped shape Code-a-Company
+- Special thanks to the open-source community for the amazing tools and libraries
+
+## Contact
+
+Your Name - Om Gupta
+Project Link: https://github.com/Om15102003/code-a-company
