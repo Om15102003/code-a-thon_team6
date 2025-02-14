@@ -28,7 +28,10 @@ Code-a-Company Employee Management System is a full-stack web application design
 - Company-wide oversight
 - Impact analysis reporting
 - Department performance metrics
-- Excel report generation
+- Excel report generation with complete Impact Analysis
+
+![image](https://github.com/user-attachments/assets/24e00f15-547a-45f0-b122-61f189f158d3)
+
 
 ## Technology Stack
 
